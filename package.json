@@ -14,8 +14,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.shiftTextDownWithComment",
+        "command": "extension.CommentAndShiftTextDown",
         "title": "Shift Text Down and Comment"
+      },
+      {
+        "command": "extension.createSnippet",
+        "title": "Create New Snippet"
       }
     ]
   },
