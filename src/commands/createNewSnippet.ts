@@ -20,6 +20,6 @@ export const createSnippetCommand = async () => {
             return;
         }
 
-        createNewSnippets(language, snippetPrefix!);
+        createNewSnippets(language, snippetPrefix);
     }
 }

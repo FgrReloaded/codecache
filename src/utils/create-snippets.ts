@@ -1,4 +1,5 @@
 import { Snippets } from "../lib/types";
+import { getSelectedCode } from "./get-selected-code";
 import { readSnippetFile } from "./read-snippet-file";
 import { writeSnippetFile } from "./write-snippet-file";
 
@@ -21,9 +22,11 @@ export const createNewSnippets = (language: string, snippetPrefix: string) => {
         return;
     }
 
+    const selectedCode = getSelectedCode();
+
     snippets["New Snippet"] = {
         prefix: snippetPrefix,
-        body: ["This is body"],
+        body: selectedCode,
         description: `Custom snippet for ${language}`
     };
 
