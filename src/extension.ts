@@ -4,8 +4,8 @@ import { createSnippetCommand } from './commands/createNewSnippet';
 
 export function activate(context: vscode.ExtensionContext) {
 
-    const shiftAndCommentDisposable = vscode.commands.registerCommand('extension.CommentAndShiftTextDown', shiftAndComment);
-    const createSnippetDisposable = vscode.commands.registerCommand('extension.createSnippet', createSnippetCommand);
+    const shiftAndCommentDisposable = vscode.commands.registerCommand('codecache.CommentAndShiftTextDown', shiftAndComment);
+    const createSnippetDisposable = vscode.commands.registerCommand('codecache.createSnippet', createSnippetCommand);
 
 
     context.subscriptions.push(shiftAndCommentDisposable, createSnippetDisposable);
