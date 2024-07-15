@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { createNewSnippets } from '../utils/create-snippets';
-import { warning, success } from '../utils/info-message';
-import { handleInput } from '../utils/input-handler';
+import { warning, success } from '../vscode-ui/info-message';
+import { handleInput } from '../vscode-ui/input-handler';
 
 
 export const createSnippetCommand = async () => {

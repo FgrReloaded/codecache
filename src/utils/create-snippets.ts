@@ -1,7 +1,7 @@
 import { Snippets } from "../lib/types";
 import { callCodeExplainer } from "../server/fetch_explainer";
 import { getSelectedCode } from "./get-selected-code";
-import { warning } from "./info-message";
+import { showLoadingIndicator, warning } from "../vscode-ui/info-message";
 import { readSnippetFile } from "./read-snippet-file";
 import { writeSnippetFile } from "./write-snippet-file";
 
@@ -17,28 +17,39 @@ const checkIfSnippetExists = (snippets: Snippets, snippetPrefix: string): boolea
     return false;
 };
 
+
 export const createNewSnippets = async (language: string, snippetPrefix: string) => {
-    const snippets = readSnippetFile(language);
 
-    if (checkIfSnippetExists(snippets, snippetPrefix.trim())) {
-        warning("Snippet with this name already exists");
-        return;
-    }
+    await showLoadingIndicator("Generating title and description for the snippet...", async () => {
 
-    const selectedCode = getSelectedCode();
+        const snippets = readSnippetFile(language);
 
-    if (selectedCode.length === 0) {
-        warning("No code selected!");
-        return;
-    }
+        if (checkIfSnippetExists(snippets, snippetPrefix.trim())) {
+            warning("Snippet with this name already exists");
+            return;
+        }
 
-    const explaination = await callCodeExplainer(selectedCode);
+        const selectedCode = getSelectedCode();
 
-    snippets["New Snippet"] = {
-        prefix: snippetPrefix,
-        body: selectedCode,
-        description: explaination || "No description available",
-    };
+        if (selectedCode.length === 0) {
+            warning("No code selected!");
+            return;
+        }
 
-    writeSnippetFile(language, snippets);
+        const { title, explanation, execution_time } = await callCodeExplainer(selectedCode) || {};
+
+        if (!title || !explanation) {
+            warning("Failed to create snippets, please try again.");
+            return;
+        }
+
+        snippets[title] = {
+            prefix: snippetPrefix,
+            body: selectedCode,
+            description: explanation || "No description available",
+        };
+
+        writeSnippetFile(language, snippets);
+
+    });
 };

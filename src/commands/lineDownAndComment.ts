@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { handleComments } from '../utils/commit';
+import { handleComments } from '../utils/generate-comments';
 
 export const shiftAndComment = () => {
     const editor = vscode.window.activeTextEditor;
