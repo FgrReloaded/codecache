@@ -1,7 +1,8 @@
 import * as vscode from 'vscode';
 import { handleComments } from '../utils/generate-comments';
+import { getSelectedCode } from '../utils/get-selected-code';
 
-export const shiftAndComment = () => {
+export const shiftAndComment = (comment: string) => {
     const editor = vscode.window.activeTextEditor;
     if (editor) {
         const selection = editor.selection;
@@ -9,15 +10,12 @@ export const shiftAndComment = () => {
 
         if (selection.isEmpty) {
             const line = document.lineAt(selection.active.line);
-            handleComments(editor, line.range.start, line.range.end);
+            handleComments(comment, line.range.start, line.range.end);
+
         } else {
-            const startLine = document.lineAt(selection.start.line);
-            const endLine = document.lineAt(selection.end.line);
+            const {start, end} = getSelectedCode();
 
-            const start = new vscode.Position(startLine.lineNumber, 0);
-            const end = new vscode.Position(endLine.lineNumber, endLine.range.end.character);
-
-            handleComments(editor, start, end);
+            handleComments(comment, start, end);
         }
     }
 }

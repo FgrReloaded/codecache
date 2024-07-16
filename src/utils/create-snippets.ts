@@ -1,5 +1,5 @@
-import { Snippets } from "../lib/types";
-import { callCodeExplainer } from "../server/fetch_explainer";
+import { Languages, Snippets } from "../lib/types";
+import { getTitleDescription } from "../server/fetch_model_api";
 import { getSelectedCode } from "./get-selected-code";
 import { showLoadingIndicator, warning } from "../vscode-ui/info-message";
 import { readSnippetFile } from "./read-snippet-file";
@@ -18,7 +18,7 @@ const checkIfSnippetExists = (snippets: Snippets, snippetPrefix: string): boolea
 };
 
 
-export const createNewSnippets = async (language: string, snippetPrefix: string) => {
+export const createNewSnippets = async (language: Languages, snippetPrefix: string) => {
 
     await showLoadingIndicator("Generating title and description for the snippet...", async () => {
 
@@ -29,14 +29,14 @@ export const createNewSnippets = async (language: string, snippetPrefix: string)
             return;
         }
 
-        const selectedCode = getSelectedCode();
+        const {selectedCode} = getSelectedCode();
 
         if (selectedCode.length === 0) {
             warning("No code selected!");
             return;
         }
 
-        const { title, explanation, execution_time } = await callCodeExplainer(selectedCode) || {};
+        const { title, explanation, execution_time } = await getTitleDescription(selectedCode) || {};
 
         if (!title || !explanation) {
             warning("Failed to create snippets, please try again.");

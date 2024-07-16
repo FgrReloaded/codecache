@@ -20,6 +20,21 @@
       {
         "command": "codecache.createSnippet",
         "title": "Create New Snippet"
+      },{
+        "command": "codecache.explainCode",
+        "title": "Generate Explanation"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codecache.createSnippet",
+        "key": "alt+.",
+        "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust/"
+      },
+      {
+        "command": "codecache.explainCode",
+        "key": "ctrl+.",
+        "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust/"
       }
     ]
   },
