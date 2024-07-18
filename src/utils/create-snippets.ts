@@ -1,7 +1,7 @@
 import { Languages, Snippets } from "../lib/types";
 import { getTitleDescription } from "../server/fetch_model_api";
 import { getSelectedCode } from "./get-selected-code";
-import { showLoadingIndicator, warning } from "../vscode-ui/info-message";
+import { showLoadingIndicator, success, warning } from "../vscode-ui/info-message";
 import { readSnippetFile } from "./read-snippet-file";
 import { writeSnippetFile } from "./write-snippet-file";
 
@@ -29,7 +29,7 @@ export const createNewSnippets = async (language: Languages, snippetPrefix: stri
             return;
         }
 
-        const {selectedCode} = getSelectedCode();
+        const { selectedCode } = getSelectedCode();
 
         if (selectedCode.length === 0) {
             warning("No code selected!");
@@ -50,6 +50,6 @@ export const createNewSnippets = async (language: Languages, snippetPrefix: stri
         };
 
         writeSnippetFile(language, snippets);
-
+        success(`Snippet created successfully!`);
     });
 };

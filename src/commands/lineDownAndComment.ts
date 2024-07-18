@@ -18,4 +18,4 @@ export const shiftAndComment = (comment: string) => {
             handleComments(comment, start, end);
         }
     }
-}
+};

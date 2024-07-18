@@ -28,4 +28,4 @@ export const getSelectedCode = (): Selection => {
     const selectedCode = selectedText.split('\n');
 
     return { selectedText, selectedCode, start:startIdx, end:endIdx };
-}
+};

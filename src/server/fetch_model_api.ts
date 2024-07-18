@@ -19,7 +19,7 @@ export async function getTitleDescription(codeSnippet: string[]): Promise<TitleD
             title: response.data.title,
             explanation: response.data.explanation,
             execution_time: response.data.execution_time
-        }
+        };
 
         return result;
 

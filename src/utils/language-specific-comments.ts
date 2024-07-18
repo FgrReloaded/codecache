@@ -2,11 +2,11 @@ import { Languages } from "../lib/types";
 
 const forwardSlashStar = (comment: string)=>{
     return `/* ${comment} */`;
-}
+};
 
 const pythonComment = (comment: string)=>{
     return `""" ${comment} """`;
-}
+};
 
 
 export const languageSpecificComments = (comment: string, language: Languages) => {

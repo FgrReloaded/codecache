@@ -9,7 +9,7 @@
 		"sourceMap": true,
 		"rootDir": "src",
 		"strict": true,
-		"types": ["estree", "node"]
+		"types": ["estree", "node", "mocha"]
 		// Explicitly include type definitions
 		/* enable all strict type-checking options */
 		/* Additional Checks */

@@ -25,7 +25,7 @@ const customizeComment = (comment: string) => {
 
     return lines.join('\n');
 
-}
+};
 
 export const handleComments = (comment: string, start: vscode.Position, end: vscode.Position) => {
     const editor = vscode.window.activeTextEditor;
@@ -40,7 +40,7 @@ export const handleComments = (comment: string, start: vscode.Position, end: vsc
         editBuilder.insert(new vscode.Position(endLine, 0), '');
         editBuilder.insert(start, `${comment}\n`);
     });
-}
+};
 
 
 

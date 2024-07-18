@@ -1,5 +1,6 @@
 {
   "name": "codecache",
+  "publisher": "fgrreloaded",
   "displayName": "CodeCache",
   "description": "a simple code snippet manager",
   "version": "0.0.1",
@@ -9,8 +10,10 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributes": {
     "commands": [
       {
@@ -20,9 +23,18 @@
       {
         "command": "codecache.createSnippet",
         "title": "Create New Snippet"
-      },{
+      },
+      {
         "command": "codecache.explainCode",
         "title": "Generate Explanation"
+      },
+      {
+        "command": "codecache.importSnippet",
+        "title": "Import Snippet"
+      },
+      {
+        "command": "codecache.shareSnippet",
+        "title": "Share Snippet"
       }
     ],
     "keybindings": [
@@ -51,6 +63,7 @@
   },
   "devDependencies": {
     "@types/estree": "^1.0.5",
+    "@types/jest": "^29.5.12",
     "@types/json-schema": "^7.0.15",
     "@types/mocha": "^10.0.7",
     "@types/node": "^20.14.10",
@@ -58,7 +71,7 @@
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.11.0",
     "@vscode/test-cli": "^0.0.9",
-    "@vscode/test-electron": "^2.4.0",
+    "@vscode/test-electron": "^2.4.1",
     "eslint": "^8.57.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",
