@@ -35,6 +35,10 @@
       {
         "command": "codecache.shareSnippet",
         "title": "Share Snippet"
+      },
+      {
+        "command": "codecache.suggestVariable",
+        "title": "Suggest Variables"
       }
     ],
     "keybindings": [

@@ -42,4 +42,14 @@ export async function getExplanation(codeSnippet: string): Promise<string | null
     }
 }
 
+export async function variableSuggester(codeSnippet: string): Promise<string | null> {
 
+    try {
+        const response = await axios.post(SERVER_URL + 'suggest_variable', { code_snippet: codeSnippet });
+        return response.data.refactored_variables;
+
+    } catch (error) {
+        console.error('Error calling server endpoint:', error);
+        return null;
+    }
+}

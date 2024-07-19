@@ -4,6 +4,7 @@ import { createSnippetCommand } from './commands/createNewSnippet';
 import { explainCode } from './commands/explainCode';
 import { importSnippetsFromUrl } from './commands/importSnippetsFromUrl';
 import { shareSnippets } from './commands/shareSnippets';
+import { suggestVariable } from './commands/suggestVariable';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -12,8 +13,9 @@ export function activate(context: vscode.ExtensionContext) {
     const codeExplainerDisposable = vscode.commands.registerCommand('codecache.explainCode', explainCode);
     const importSnippetDisposable = vscode.commands.registerCommand('codecache.importSnippet', async (urlString: string) => { importSnippetsFromUrl(urlString); });
     const shareSnippetDisposable = vscode.commands.registerCommand('codecache.shareSnippet', shareSnippets);
+    const suggestVariableDisposable = vscode.commands.registerCommand('codecache.suggestVariable', suggestVariable);
 
-    context.subscriptions.push(shiftAndCommentDisposable, createSnippetDisposable, codeExplainerDisposable, importSnippetDisposable, shareSnippetDisposable);
+    context.subscriptions.push(shiftAndCommentDisposable, createSnippetDisposable, codeExplainerDisposable, importSnippetDisposable, shareSnippetDisposable, suggestVariableDisposable);
 
     context.subscriptions.push(vscode.window.registerUriHandler({
         handleUri(uri: vscode.Uri) {
