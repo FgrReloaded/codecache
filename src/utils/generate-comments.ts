@@ -37,7 +37,7 @@ export const handleComments = (comment: string, start: vscode.Position, end: vsc
     // const customizedComment = customizeComment(comment);
 
     editor.edit(editBuilder => {
-        editBuilder.insert(new vscode.Position(endLine, 0), '');
+        // editBuilder.insert(new vscode.Position(endLine, 0), '');
         editBuilder.insert(start, `${comment}\n`);
     });
 };

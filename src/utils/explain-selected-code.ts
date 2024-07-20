@@ -5,7 +5,7 @@ import { languageSpecificComments } from "./language-specific-comments";
 import * as vscode from 'vscode';
 
 
-export const explainSelectedCode = async (language: Languages, selectedCode: string) => {
+export const explainSelectedCode = async (language: Languages, selectedCode: string, start: vscode.Position) => {
 
     await showLoadingIndicator("Generating explanation...", async () => {
 
@@ -18,7 +18,7 @@ export const explainSelectedCode = async (language: Languages, selectedCode: str
 
         const generatedComment = languageSpecificComments(explanation, language);
 
-        vscode.commands.executeCommand('codecache.CommentAndShiftTextDown', generatedComment);
+        vscode.commands.executeCommand('codecache.CommentAndShiftTextDown', generatedComment, start);
 
     });
 

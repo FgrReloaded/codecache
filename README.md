@@ -1,71 +1,58 @@
-# codecache README
+# ✍️ CodeCache
 
-This is the README for your extension "codecache". After writing up a brief description, we recommend including the following sections.
+![Ratings](https://img.shields.io/visual-studio-marketplace/r/mintlify.document) [![discord](https://img.shields.io/discord/911693009253466123?logo=Discord&logoColor=white)](https://discord.gg/6W7GuYuxra) [![GitHub Stars](https://img.shields.io/github/stars/mintlify/vscode-docs?style=social)](https://github.com/mintlify/vscode-docs) [![Twitter](https://img.shields.io/twitter/follow/mintlify?style=social)](https://twitter.com/mintlify)
 
-## Features
+Snippets Simplified, Code Amplified.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Enhance your coding workflow with CodeCache, the ultimate VS Code extension for seamless snippet management. Effortlessly generate, save, and share code snippets, get real-time code explanations, and refactor your snippets with ease. Stay organized and boost productivity with features like snippet title generation, quick sharing links, and more.
 
-For example if there is an image subfolder under your extension project workspace:
+[![Demo](vscode/assets/demo-docs.gif)](https://www.loom.com/embed/3dbfcd7e0e1b47519d957746e05bf0f4)
 
-\!\[feature X\]\(images/feature-x.png\)
+### 👩‍💻 How to create snippets
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+**Step 1:** Highlight code 
 
-## Requirements
+**Step 2:** Hit (**Alt + .**) or **Press Ctrl + Shift + P** and type **Create New Snippet** and Press **Enter**
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+--- 
 
-## Extension Settings
+### 👩‍💻 How to generate explanation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+**Step 1:** Highlight code or place cursor on the line you want to document
 
-For example:
+**Step 2:** Hit (**Ctrl + .**) or Right Click on selected code and choose **Generate Explanation**
 
-This extension contributes the following settings:
+--- 
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### 👩‍💻 How to generate proper variables name
 
-## Known Issues
+**Step 1:** Highlight code 
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+**Step 2:** Right Click on selected code and choose **Suggest Variables**
 
-## Release Notes
+<img src="vscode/assets/demo.gif" width="520px" />
 
-Users appreciate release notes as you update your extension.
+### 📝 Languages supported
 
-### 1.0.0
+- Python
+- JavaScript
+- TypeScript
+- JSX and TSX files
+- C and C++
+- PHP
+- Java
+- C#
+- Rust
+- Go
 
-Initial release of ...
 
-### 1.0.1
+### 🚨 Disclaimer
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+We are currently available only for windows.
 
 ---
 
-## Following extension guidelines
+### More information
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+_Built with 💪🏾 by the Nitish Singh_

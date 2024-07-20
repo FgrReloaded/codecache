@@ -15,5 +15,4 @@ export const allowedLanguages: Languages[] = [ "html", "css", "javascript", "typ
 
 
 
-
 export { Snippet, Snippets };

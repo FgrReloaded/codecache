@@ -21,7 +21,7 @@ export const shareSnippets = async () => {
 
             const language = editor.document.languageId as Languages;
 
-            const { selectedText } = getSelectedCode();
+            const { selectedText, start } = getSelectedCode();
 
             if (selectedText.length === 0) {
                 warning("No code selected!");
@@ -39,7 +39,7 @@ export const shareSnippets = async () => {
             });
 
             const comment = languageSpecificComments(snippetUrl, language);
-            vscode.commands.executeCommand('codecache.CommentAndShiftTextDown', comment);
+            vscode.commands.executeCommand('codecache.CommentAndShiftTextDown', comment, start);
         });
 
     }

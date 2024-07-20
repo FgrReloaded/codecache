@@ -15,14 +15,14 @@ export const explainCode = async () => {
             return;
         }
 
-        const { selectedText } = getSelectedCode();
+        const { selectedText, start } = getSelectedCode();
 
         if (!selectedText) {
             warning('No code selected!');
             return;
         }
 
-        explainSelectedCode(language, selectedText);
+        explainSelectedCode(language, selectedText, start);
 
     }
 };

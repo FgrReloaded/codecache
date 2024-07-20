@@ -2,13 +2,26 @@
   "name": "codecache",
   "publisher": "fgrreloaded",
   "displayName": "CodeCache",
-  "description": "a simple code snippet manager",
+  "description": "a simple code snippet manager with great features",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.91.0"
   },
   "categories": [
-    "Other"
+    "AI", "Formatters", "Snippets", "Programming Languages"
+  ],
+  "keywords": [
+    "code", "snippet", "manager", "comment", "create", "import", "share", "suggest", "variable", "explanation", "documentation",
+		"refactor",
+		"javascript",
+		"python",
+		"typescript",
+		"php",
+		"go",
+		"ruby",
+		"c++",
+		"c#",
+		"java"
   ],
   "main": "./dist/extension.js",
   "activationEvents": [
@@ -39,22 +52,37 @@
       {
         "command": "codecache.suggestVariable",
         "title": "Suggest Variables"
-      },
-      {
-        "command": "codecache.refactorCode",
-        "title": "Refator Code"
       }
     ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "codecache.explainCode",
+          "when": "editorHasSelection && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust|html|css|typescriptreact|javascriptreact/",
+          "group": "2_modification"
+        },
+        {
+          "command": "codecache.suggestVariable",
+          "when": "editorHasSelection && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust|html|css|typescriptreact|javascriptreact/",
+          "group": "2_modification"
+        },
+        {
+          "command": "codecache.shareSnippet",
+          "when": "editorHasSelection && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust|html|css|typescriptreact|javascriptreact/",
+          "group": "2_modification"
+        }
+      ]
+    },
     "keybindings": [
       {
         "command": "codecache.createSnippet",
         "key": "alt+.",
-        "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust/"
+        "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust|html|css|typescriptreact|javascriptreact/"
       },
       {
         "command": "codecache.explainCode",
         "key": "ctrl+.",
-        "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust/"
+        "when": "editorTextFocus && editorLangId =~ /typescript|javascript|python|java|c|cpp|csharp|go|rust|html|css|typescriptreact|javascriptreact/"
       }
     ]
   },

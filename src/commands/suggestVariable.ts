@@ -13,7 +13,8 @@ export const suggestVariable = async () => {
             return;
         }
 
-        const { selectedText } = getSelectedCode();
+        const { selectedText, start, end } = getSelectedCode();
+
         if (!selectedText) {
             warning('No code selected!');
             return;
@@ -26,7 +27,7 @@ export const suggestVariable = async () => {
             return;
         }
 
-        showRefactoredCode(refactoredCode);
+        showRefactoredCode(refactoredCode, selectedText, start, end);
 
     });
 
