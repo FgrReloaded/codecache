@@ -14,8 +14,12 @@ export function activate(context: vscode.ExtensionContext) {
     const importSnippetDisposable = vscode.commands.registerCommand('codecache.importSnippet', async (urlString: string) => { importSnippetsFromUrl(urlString); });
     const shareSnippetDisposable = vscode.commands.registerCommand('codecache.shareSnippet', shareSnippets);
     const suggestVariableDisposable = vscode.commands.registerCommand('codecache.suggestVariable', suggestVariable);
+    // const refactorCodeDisposable = vscode.commands.registerCommand('codecache.refactorCode', );
+
+
 
     context.subscriptions.push(shiftAndCommentDisposable, createSnippetDisposable, codeExplainerDisposable, importSnippetDisposable, shareSnippetDisposable, suggestVariableDisposable);
+
 
     context.subscriptions.push(vscode.window.registerUriHandler({
         handleUri(uri: vscode.Uri) {
@@ -24,6 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
             }
         }
     }));
+
 }
 
 export function deactivate() { }

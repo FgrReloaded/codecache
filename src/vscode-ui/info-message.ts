@@ -12,6 +12,7 @@ export const success = (message: string) => {
     vscode.window.showInformationMessage(message);
 };
 
+
 export const showIndicatorWithBtn = (message: string, btnWorkers: ButtonWorkers) => {
     vscode.window.showInformationMessage(message, ...Object.keys(btnWorkers)).then((selection) => {
         if (selection) {

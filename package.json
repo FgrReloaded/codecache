@@ -39,6 +39,10 @@
       {
         "command": "codecache.suggestVariable",
         "title": "Suggest Variables"
+      },
+      {
+        "command": "codecache.refactorCode",
+        "title": "Refator Code"
       }
     ],
     "keybindings": [

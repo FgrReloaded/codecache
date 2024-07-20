@@ -1,5 +1,13 @@
 import * as vscode from 'vscode';
-import { warning } from '../vscode-ui/info-message';
+import { showIndicatorWithBtn, warning } from '../vscode-ui/info-message';
+import { getSelectedCode } from './get-selected-code';
+
+
+const replaceCodeSnippet = async (editor: vscode.TextEditor, selection: vscode.Selection, codeSnippet: string) => {
+    await editor.edit(editBuilder => {
+        editBuilder.replace(selection, codeSnippet);
+    });
+};
 
 export const showRefactoredCode = async (codeSnippet: string) => {
     const editor = vscode.window.activeTextEditor;
@@ -9,9 +17,17 @@ export const showRefactoredCode = async (codeSnippet: string) => {
     }
     const selection = editor.selection;
 
-    await editor.edit(editBuilder => {
-        editBuilder.replace(selection, codeSnippet);
+    const { selectedText } = getSelectedCode();
+
+    await replaceCodeSnippet(editor, selection, codeSnippet);
+
+    showIndicatorWithBtn('Apply changes?', {
+        Apply: () => { },
+        Cancel: async () => {
+            await replaceCodeSnippet(editor, selection, selectedText);
+        }
     });
+
 
     editor.selection = new vscode.Selection(selection.start, selection.start);
 
