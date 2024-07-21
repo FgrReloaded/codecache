@@ -24,9 +24,14 @@ const refractoredSnippet = (importedSnippets: any) => {
 
 export async function fetchSnippetsFromUrl(language: string, url: string) {
     try {
+        const token = await generateToken();
         const existingSnippets = readSnippetFile(language);
-        const response = await axios.get(url);
-
+        const response = await axios.get(url, {
+            headers:{
+                "Authorization": token
+            }
+        });
+        console.log(response.data);
         const importedSnippets = response.data.code_snippet;
 
         const snippetToImport = refractoredSnippet(importedSnippets);
@@ -37,7 +42,8 @@ export async function fetchSnippetsFromUrl(language: string, url: string) {
         success(`Snippets imported successfully!`);
 
     } catch (error) {
-        warning(`Error importing snippets.`);
+        warning(`Error importing snippets.${error}`);
+        
     }
 }
 

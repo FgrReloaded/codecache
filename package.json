@@ -2,7 +2,7 @@
   "name": "codecache",
   "publisher": "fgrreloaded",
   "displayName": "CodeCache",
-  "description": "a simple code snippet manager with great features",
+  "description": "Manage, Refactor, Share and Import Code Snippets",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.91.0"
