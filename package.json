@@ -7,21 +7,39 @@
   "engines": {
     "vscode": "^1.91.0"
   },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "icon": "media/logo.png",
   "categories": [
-    "AI", "Formatters", "Snippets", "Programming Languages"
+    "AI",
+    "Formatters",
+    "Snippets",
+    "Programming Languages"
   ],
   "keywords": [
-    "code", "snippet", "manager", "comment", "create", "import", "share", "suggest", "variable", "explanation", "documentation",
-		"refactor",
-		"javascript",
-		"python",
-		"typescript",
-		"php",
-		"go",
-		"ruby",
-		"c++",
-		"c#",
-		"java"
+    "code",
+    "snippet",
+    "manager",
+    "comment",
+    "create",
+    "import",
+    "share",
+    "suggest",
+    "variable",
+    "explanation",
+    "documentation",
+    "refactor",
+    "javascript",
+    "python",
+    "typescript",
+    "php",
+    "go",
+    "ruby",
+    "c++",
+    "c#",
+    "java"
   ],
   "main": "./dist/extension.js",
   "activationEvents": [
@@ -101,6 +119,7 @@
     "@types/estree": "^1.0.5",
     "@types/jest": "^29.5.12",
     "@types/json-schema": "^7.0.15",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/mocha": "^10.0.7",
     "@types/node": "^20.14.10",
     "@types/vscode": "^1.91.0",
@@ -116,6 +135,7 @@
   },
   "dependencies": {
     "axios": "^1.7.2",
+    "jsonwebtoken": "^9.0.2",
     "path": "^0.12.7"
   }
 }

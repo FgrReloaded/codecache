@@ -1,5 +1,5 @@
 import { Languages, Snippets } from "../lib/types";
-import { getTitleDescription } from "../server/fetch_model_api";
+import { getTitleDescription } from "../server/fetch-model-api";
 import { getSelectedCode } from "./get-selected-code";
 import { showLoadingIndicator, success, warning } from "../vscode-ui/info-message";
 import { readSnippetFile } from "./read-snippet-file";

@@ -7,7 +7,7 @@ import { languageSpecificComments } from '../utils/language-specific-comments';
 
 
 const generateUrl = (snippet_id: string, language: Languages) => {
-    const SERVER_URL = 'http://localhost:8000/api/';
+    const SERVER_URL = 'http://13.234.115.43/api/';
     const VSCODE_URL = `vscode://fgrreloaded.codecache/importSnippets?language=${language}&snippetUrl=`;
     const snippetUrl = SERVER_URL + 'get_snippet?snippet_id=' + snippet_id;
 

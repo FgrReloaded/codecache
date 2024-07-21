@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { generateToken } from './api-token-generator';
 
 interface TitleDescriptionResponse {
     title: string;
@@ -6,14 +7,20 @@ interface TitleDescriptionResponse {
     execution_time: string;
 }
 
-const SERVER_URL = 'http://localhost:8000/api/';
+const SERVER_URL = 'http://13.234.115.43/api/';
 
 export async function getTitleDescription(codeSnippet: string[]): Promise<TitleDescriptionResponse | null> {
 
     const code_snippet = codeSnippet.join('\n');
 
     try {
-        const response = await axios.post(SERVER_URL + 'title_desc', { code_snippet });
+        const token = await generateToken();
+        const response = await axios.post(SERVER_URL + 'title_desc',{ code_snippet }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }
+        });
 
         const result = {
             title: response.data.title,
@@ -32,7 +39,12 @@ export async function getTitleDescription(codeSnippet: string[]): Promise<TitleD
 export async function getExplanation(codeSnippet: string): Promise<string | null> {
 
     try {
-        const response = await axios.post(SERVER_URL + 'explain_code', { code_snippet: codeSnippet });
+        const token = await generateToken();
+        const response = await axios.post(SERVER_URL + 'explain_code', { code_snippet: codeSnippet }, {
+            headers: {
+                'Authorization': token
+            }
+        });
 
         return response.data.explanation;
 
@@ -45,7 +57,12 @@ export async function getExplanation(codeSnippet: string): Promise<string | null
 export async function variableSuggester(codeSnippet: string): Promise<string | null> {
 
     try {
-        const response = await axios.post(SERVER_URL + 'suggest_variable', { code_snippet: codeSnippet });
+        const token = await generateToken();
+        const response = await axios.post(SERVER_URL + 'suggest_variable', { code_snippet: codeSnippet }, {
+            headers: {
+                'Authorization': token
+            }
+        });
         return response.data.refactored_variables;
 
     } catch (error) {

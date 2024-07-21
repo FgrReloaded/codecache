@@ -3,9 +3,10 @@ import { readSnippetFile } from '../utils/read-snippet-file';
 import { writeSnippetFile } from '../utils/write-snippet-file';
 import { success, warning } from '../vscode-ui/info-message';
 import { Snippet, Snippets } from '../lib/types';
+import { generateToken } from './api-token-generator';
 
 
-const SERVER_URL = 'http://localhost:8000/api/';
+const SERVER_URL = 'http://13.234.115.43/api/';
 
 const refractoredSnippet = (importedSnippets: any) => {
     const title = importedSnippets.title;
@@ -42,7 +43,12 @@ export async function fetchSnippetsFromUrl(language: string, url: string) {
 
 export async function saveSharedSnippet(codeSnippet: string, language: string, prefix: string=''){
     try {
-        const response = await axios.post(SERVER_URL + 'save_snippet', { code_snippet: codeSnippet, prefix });
+        const token = await generateToken();
+        const response = await axios.post(SERVER_URL + 'save_snippet', { code_snippet: codeSnippet, prefix }, {
+            headers: {
+                'Authorization': token
+            }
+        });
 
         const { message, snippet_id } = response.data;
 

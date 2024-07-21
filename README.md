@@ -1,36 +1,59 @@
 # ✍️ CodeCache
 
-![Ratings](https://img.shields.io/visual-studio-marketplace/r/mintlify.document) [![discord](https://img.shields.io/discord/911693009253466123?logo=Discord&logoColor=white)](https://discord.gg/6W7GuYuxra) [![GitHub Stars](https://img.shields.io/github/stars/mintlify/vscode-docs?style=social)](https://github.com/mintlify/vscode-docs) [![Twitter](https://img.shields.io/twitter/follow/mintlify?style=social)](https://twitter.com/mintlify)
+<!-- ![Ratings](https://img.shields.io/visual-studio-marketplace/r/mintlify.document) -->
 
 Snippets Simplified, Code Amplified.
 
 Enhance your coding workflow with CodeCache, the ultimate VS Code extension for seamless snippet management. Effortlessly generate, save, and share code snippets, get real-time code explanations, and refactor your snippets with ease. Stay organized and boost productivity with features like snippet title generation, quick sharing links, and more.
 
-[![Demo](vscode/assets/demo-docs.gif)](https://www.loom.com/embed/3dbfcd7e0e1b47519d957746e05bf0f4)
 
 ### 👩‍💻 How to create snippets
 
-**Step 1:** Highlight code 
+**Step 1:** Highlight the code 
 
-**Step 2:** Hit (**Alt + .**) or **Press Ctrl + Shift + P** and type **Create New Snippet** and Press **Enter**
+**Step 2:** Hit (**Alt + .**) or **Press Ctrl + Shift + P** and type **Create New Snippet** and Press **Enter**.
+
+<img src="media/create_snippet.gif" width="720px" alt="Demo" />
 
 --- 
 
 ### 👩‍💻 How to generate explanation
 
-**Step 1:** Highlight code or place cursor on the line you want to document
+**Step 1:** Highlight the code or place cursor on the line you want to document
 
-**Step 2:** Hit (**Ctrl + .**) or Right Click on selected code and choose **Generate Explanation**
+**Step 2:** Hit (**Ctrl + .**) or Right Click on selected code and choose **Generate Explanation**.
+
+<img src="media/explain_snippet.gif" width="720px" alt="Demo" />
 
 --- 
 
-### 👩‍💻 How to generate proper variables name
+### 👩‍💻 How to use Variables Suggester.
 
-**Step 1:** Highlight code 
+**Step 1:** Highlight the code 
 
-**Step 2:** Right Click on selected code and choose **Suggest Variables**
+**Step 2:** Right click on selected code and choose **Suggest Variables** or Press **Ctrl+Shift+P** and Type **Suggest Variables** and Press Enter.
 
-<img src="vscode/assets/demo.gif" width="520px" />
+<img src="media/suggest_variable.gif" width="720px" alt="Demo" />
+
+--- 
+
+### 👩‍💻 How to share snippet.
+
+**Step 1:** Highlight the code you want to share 
+
+**Step 2:** Right click on selected code and choose **Share Snippet** or Press **Ctrl+Shift+P** and Type **Share Snippet** and Press Enter.
+
+<img src="media/share_snippet.gif" width="720px" alt="Demo" />
+
+--- 
+
+### 👩‍💻 How to import snippet.
+
+**Step 1:** Paste the code in your browser, If dialog appears asking for url to open in vs code. Click on open in vs code and then your snippets will be imported by CodeCache.  
+
+<img src="media/import_snippet.gif" width="720px" alt="Demo" />
+
+
 
 ### 📝 Languages supported
 
