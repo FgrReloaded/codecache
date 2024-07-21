@@ -1,7 +1,5 @@
 # ✍️ CodeCache
 
-<!-- ![Ratings](https://img.shields.io/visual-studio-marketplace/r/mintlify.document) -->
-
 Snippets Simplified, Code Amplified.
 
 Enhance your coding workflow with CodeCache, the ultimate VS Code extension for seamless snippet management. Effortlessly generate, save, and share code snippets, get real-time code explanations, and refactor your snippets with ease. Stay organized and boost productivity with features like snippet title generation, quick sharing links, and more.
@@ -13,7 +11,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 2:** Hit (**Alt + .**) or **Press Ctrl + Shift + P** and type **Create New Snippet** and Press **Enter**.
 
-<img src="media/create_snippet.gif" width="720px" alt="Demo" />
+<img src="assets/create_snippet.gif" width="720px"  />
 
 --- 
 
@@ -23,7 +21,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 2:** Hit (**Ctrl + .**) or Right Click on selected code and choose **Generate Explanation**.
 
-<img src="media/explain_snippet.gif" width="720px" alt="Demo" />
+<img src="assets/explain_snippet.gif" width="720px"  />
 
 --- 
 
@@ -33,7 +31,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 2:** Right click on selected code and choose **Suggest Variables** or Press **Ctrl+Shift+P** and Type **Suggest Variables** and Press Enter.
 
-<img src="media/suggest_variable.gif" width="720px" alt="Demo" />
+<img src="assets/suggest_variable.gif" width="720px"  />
 
 --- 
 
@@ -43,7 +41,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 2:** Right click on selected code and choose **Share Snippet** or Press **Ctrl+Shift+P** and Type **Share Snippet** and Press Enter.
 
-<img src="media/share_snippet.gif" width="720px" alt="Demo" />
+<img src="assets/share_snippet.gif" width="720px"  />
 
 --- 
 
@@ -51,7 +49,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 1:** Paste the code in your browser, If dialog appears asking for url to open in vs code. Click on open in vs code and then your snippets will be imported by CodeCache.  
 
-<img src="media/import_snippet.gif" width="720px" alt="Demo" />
+<img src="assets/import_snippet.gif" width="720px"  />
 
 
 
