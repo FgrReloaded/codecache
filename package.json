@@ -3,13 +3,9 @@
   "publisher": "fgrreloaded",
   "displayName": "CodeCache",
   "description": "Manage, Refactor, Share and Import Code Snippets",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.91.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FgrReloaded/codecache"
   },
   "icon": "media/logo.png",
   "categories": [

@@ -11,8 +11,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 2:** Hit (**Alt + .**) or **Press Ctrl + Shift + P** and type **Create New Snippet** and Press **Enter**.
 
-<img src="assets/create_snippet.gif" width="720px"  />
-
+![Demo](https://res.cloudinary.com/dfn0nvt6t/image/upload/v1721614423/create_snippet.gif)
 --- 
 
 ### 👩‍💻 How to generate explanation
@@ -21,7 +20,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 2:** Hit (**Ctrl + .**) or Right Click on selected code and choose **Generate Explanation**.
 
-<img src="assets/explain_snippet.gif" width="720px"  />
+![Demo](https://res.cloudinary.com/dfn0nvt6t/image/upload/v1721615002/explain_snippet.gif)
 
 --- 
 
@@ -31,7 +30,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 2:** Right click on selected code and choose **Suggest Variables** or Press **Ctrl+Shift+P** and Type **Suggest Variables** and Press Enter.
 
-<img src="assets/suggest_variable.gif" width="720px"  />
+![Demo](https://res.cloudinary.com/dfn0nvt6t/image/upload/v1721614528/pfmynpqwb7ojny7shunv.gif)
 
 --- 
 
@@ -41,7 +40,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 2:** Right click on selected code and choose **Share Snippet** or Press **Ctrl+Shift+P** and Type **Share Snippet** and Press Enter.
 
-<img src="assets/share_snippet.gif" width="720px"  />
+![Demo](https://res.cloudinary.com/dfn0nvt6t/image/upload/v1721614530/share_snipppet.gif)
 
 --- 
 
@@ -49,7 +48,7 @@ Enhance your coding workflow with CodeCache, the ultimate VS Code extension for 
 
 **Step 1:** Paste the code in your browser, If dialog appears asking for url to open in vs code. Click on open in vs code and then your snippets will be imported by CodeCache.  
 
-<img src="assets/import_snippet.gif" width="720px"  />
+![Demo](https://res.cloudinary.com/dfn0nvt6t/image/upload/v1721614530/import_snippet.gif)
 
 
 
