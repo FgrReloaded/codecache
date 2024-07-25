@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { fetchSnippetsFromUrl } from "../server/snippets-url";
 import { warning } from "../vscode-ui/info-message";
 
@@ -6,16 +7,16 @@ const extractParams = (urlString: string) => {
     const decodedUrl = decodeURIComponent(urlString);
     const url = new URL(decodedUrl);
     const language = url.searchParams.get('language');
-    const snippetUrl = url.searchParams.get('snippetUrl');
+    const snippetId = url.searchParams.get('snippetId');
 
-    return{language, snippetUrl};
+    return { language, snippetId };
 };
 
 export const importSnippetsFromUrl = async (urlString: string) => {
-    const { language, snippetUrl } = extractParams(urlString);
+    const { language, snippetId } = extractParams(urlString);
 
-    if (language && snippetUrl) {
-        await fetchSnippetsFromUrl(language, snippetUrl);
+    if (language && snippetId) {
+        await fetchSnippetsFromUrl(language, new ObjectId(snippetId));
     } else {
         warning('Invalid URL!');
     }

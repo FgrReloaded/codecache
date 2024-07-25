@@ -112,6 +112,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
+    "@gradio/client": "^1.4.0",
     "@types/estree": "^1.0.5",
     "@types/jest": "^29.5.12",
     "@types/json-schema": "^7.0.15",
@@ -130,8 +131,10 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@types/mongodb": "^4.0.7",
     "axios": "^1.7.2",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0",
     "path": "^0.12.7"
   }
 }

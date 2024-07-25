@@ -6,8 +6,14 @@ import { importSnippetsFromUrl } from './commands/importSnippetsFromUrl';
 import { shareSnippets } from './commands/shareSnippets';
 import { suggestVariable } from './commands/suggestVariable';
 import { allowedLanguages } from './lib/types';
+import { connectToClient } from './utils/ai-client';
+
 
 export function activate(context: vscode.ExtensionContext) {
+
+    (async () => {
+        await connectToClient();
+    })();
 
     const shiftAndCommentDisposable = vscode.commands.registerCommand('codecache.CommentAndShiftTextDown', (comment, startLine) => { shiftAndComment(comment, startLine); });
     const createSnippetDisposable = vscode.commands.registerCommand('codecache.createSnippet', createSnippetCommand);

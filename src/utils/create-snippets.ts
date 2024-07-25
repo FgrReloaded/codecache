@@ -1,5 +1,5 @@
 import { Languages, Snippets } from "../lib/types";
-import { getTitleDescription } from "../server/fetch-model-api";
+import { getTitleDescription } from "../utils/ai-client";
 import { getSelectedCode } from "./get-selected-code";
 import { showLoadingIndicator, success, warning } from "../vscode-ui/info-message";
 import { readSnippetFile } from "./read-snippet-file";
@@ -29,14 +29,14 @@ export const createNewSnippets = async (language: Languages, snippetPrefix: stri
             return;
         }
 
-        const { selectedCode } = getSelectedCode();
+        const { selectedText } = getSelectedCode();
 
-        if (selectedCode.length === 0) {
+        if (selectedText.length === 0) {
             warning("No code selected!");
             return;
         }
 
-        const { title, explanation, execution_time } = await getTitleDescription(selectedCode) || {};
+        const { title, explanation } = await getTitleDescription(selectedText) || {};
 
         if (!title || !explanation) {
             warning("Failed to create snippets, please try again.");
@@ -45,7 +45,7 @@ export const createNewSnippets = async (language: Languages, snippetPrefix: stri
 
         snippets[title] = {
             prefix: snippetPrefix,
-            body: selectedCode,
+            body: selectedText.split("\n"),
             description: explanation || "No description available",
         };
 

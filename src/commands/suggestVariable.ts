@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import { showLoadingIndicator, warning } from '../vscode-ui/info-message';
 import { getSelectedCode } from '../utils/get-selected-code';
-import { variableSuggester } from '../server/fetch-model-api';
+import { variableSuggester } from '../utils/ai-client';
 import { showRefactoredCode } from '../utils/show-refactored-code';
 
 

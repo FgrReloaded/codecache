@@ -1,6 +1,6 @@
 import { Languages } from "../lib/types";
 import { showLoadingIndicator, warning } from "../vscode-ui/info-message";
-import { getExplanation } from "../server/fetch-model-api";
+import { getExplanation } from "../utils/ai-client";
 import { languageSpecificComments } from "./language-specific-comments";
 import * as vscode from 'vscode';
 

@@ -2,16 +2,15 @@ import * as vscode from 'vscode';
 import { Languages } from '../lib/types';
 import { getSelectedCode } from '../utils/get-selected-code';
 import { showIndicatorWithBtn, showLoadingIndicator, warning } from '../vscode-ui/info-message';
-import { saveSharedSnippet } from '../server/snippets-url';
 import { languageSpecificComments } from '../utils/language-specific-comments';
+import { insertSnippets } from '../server/actions';
+import { ObjectId } from 'mongodb';
 
 
-const generateUrl = (snippet_id: string, language: Languages) => {
-    const SERVER_URL = 'http://13.234.115.43/api/';
-    const VSCODE_URL = `vscode://fgrreloaded.codecache/importSnippets?language=${language}&snippetUrl=`;
-    const snippetUrl = SERVER_URL + 'get_snippet?snippet_id=' + snippet_id;
+const generateUrl = (snippet_id: ObjectId, language: Languages) => {
+    const VSCODE_URL = `vscode://fgrreloaded.codecache/importSnippets?language=${language}&snippetId=`;
 
-    return VSCODE_URL + snippetUrl;
+    return VSCODE_URL + snippet_id;
 };
 
 export const shareSnippets = async () => {
@@ -28,7 +27,7 @@ export const shareSnippets = async () => {
                 return;
             }
 
-            const snippet_id = await saveSharedSnippet(selectedText, language);
+            const snippet_id = await insertSnippets("codecache", selectedText);
 
             const snippetUrl = generateUrl(snippet_id, language);
 
