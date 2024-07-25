@@ -7,12 +7,14 @@ import { shareSnippets } from './commands/shareSnippets';
 import { suggestVariable } from './commands/suggestVariable';
 import { allowedLanguages } from './lib/types';
 import { connectToClient } from './utils/ai-client';
+import { connect } from './server/actions';
 
 
 export function activate(context: vscode.ExtensionContext) {
 
     (async () => {
         await connectToClient();
+        await connect();
     })();
 
     const shiftAndCommentDisposable = vscode.commands.registerCommand('codecache.CommentAndShiftTextDown', (comment, startLine) => { shiftAndComment(comment, startLine); });
