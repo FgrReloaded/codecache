@@ -19,6 +19,10 @@ export const languageSpecificComments = (comment: string, language: Languages) =
         case "csharp":
         case "go":
         case "rust":
+        case "css":
+        case "html":
+        case "javascriptreact":
+        case "typescriptreact":
             return forwardSlashStar(comment);
         case "python":
             return pythonComment(comment);

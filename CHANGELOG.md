@@ -11,3 +11,7 @@ All notable changes to the "codecache" extension will be documented in this file
 - Share snippet.
 - Import snippet.
 - Support for Python, JavaScript, TypeScript, JSX, TSX, C, C++, PHP, Java, C#, Rust.
+
+## 1.0.1
+### Fixed
+- Fix bug 
