@@ -15,3 +15,7 @@ All notable changes to the "codecache" extension will be documented in this file
 ## 1.0.1
 ### Fixed
 - Fix bug 
+
+## 1.0.1
+### Fixed
+- Fix bug 
