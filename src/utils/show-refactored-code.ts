@@ -18,6 +18,9 @@ export const showRefactoredCode = async (codeSnippet: string, selectedCode: stri
 
     await replaceCodeSnippet(editor, start, end, codeSnippet);
 
+    const newEnd = new vscode.Position(start.line + codeSnippet.split('\n').length - 1, codeSnippet.split('\n')?.pop()?.length || 0);
+    editor.selection = new vscode.Selection(start, newEnd);
+
     showIndicatorWithBtn('Apply changes?', {
         Apply: () => { },
         Cancel: async () => {
