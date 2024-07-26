@@ -3,7 +3,7 @@
   "publisher": "fgrreloaded",
   "displayName": "CodeCache",
   "description": "Manage, Refactor, Share and Import Code Snippets",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.91.0"
   },
