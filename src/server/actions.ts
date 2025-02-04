@@ -1,13 +1,12 @@
 import { MongoClient, Db, ObjectId } from "mongodb";
 import { getTitleDescription } from "../utils/ai-client";
-import { irsc, nstr, oset } from "../lib/constant";
 
 
-const calculatedStr = nstr + irsc + oset;
+const mongoURL = "mongodb://localhost:27017";
 
 const dbName = 'codecache';
 
-const client = new MongoClient(calculatedStr);
+const client = new MongoClient(mongoURL);
 
 let dbConnection: Db | null = null;
 
@@ -36,7 +35,7 @@ export async function insertSnippets(collectionName: string, codeSnippet: string
     return result.insertedId;
 }
 
-export async function findSnippet(collectionName: string, query:ObjectId) {
+export async function findSnippet(collectionName: string, query: ObjectId) {
     const db = await connect();
     const collection = db.collection(collectionName);
     const document = await collection.findOne({ _id: query });
